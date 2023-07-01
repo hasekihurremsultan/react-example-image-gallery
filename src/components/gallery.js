@@ -19,10 +19,9 @@ const $map = (images, prefix) => {
 
 const Gallery = ({ images = [], sourcePrefix = null, initialIndex = 0 }) => {
   const [open, setOpen] = useContext(GalleryContext);
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
   if (!open) return null;
-
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
   const mapImages =
     sourcePrefix && images.length ? $map(images, sourcePrefix) : images;
