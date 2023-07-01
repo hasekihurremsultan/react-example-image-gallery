@@ -2,26 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+button.primary-btn {
+    @apply bg-blue-500 text-white px-4 py-3 border border-blue-500 hover:bg-white hover:text-blue-500;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.fixed-layer {
+    --arrow-button-container: 75px;
+    @apply fixed top-0 left-0 w-full h-full bg-black/70 z-[999] grid items-center px-4;
+    grid-template: 1fr / var(--arrow-button-container) 1fr var(--arrow-button-container);
+    grid-column-gap: 2em;
+    grid-template-areas: "leftArrow main rightArrow";
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+button.icon-button {
+    @apply bg-white opacity-70 hover:opacity-100 border-2 border-gray-200 hover:border-white focus:border-indigo-300 shadow-md transition text-gray-950 w-[40px] h-[40px] rounded-full inline-flex items-center justify-center;
+}
+
+button.close-btn {
+    @apply fixed top-8 right-6 z-[9999] w-10 h-10 text-white rounded-full bg-indigo-950 inline-flex items-center justify-center opacity-75 transition-opacity hover:opacity-90;
 }

@@ -1,0 +1,16 @@
+#leftArrow {
+    grid-area: leftArrow;
+}
+
+#rightArrow {
+    grid-area: rightArrow;
+}
+
+#imageContent {
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: 1fr 60px / 1fr;
+    padding: 3em 0 1em 0;
+}
